@@ -1,0 +1,19 @@
+<html>
+
+<head>
+    <script>
+        function changeContent() {
+            // create an element
+            let body = document.createElement("body")
+            let body_text = document.createTextNode("Hello there!")
+            body.appendChild(body_text)
+            document.body.appendChild(body)
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="changeContent()">Click here</button>
+</body>
+
+</html>
