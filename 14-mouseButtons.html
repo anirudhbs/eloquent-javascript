@@ -1,0 +1,21 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <button>Click me</button>
+  <p>No handler here</p>
+  <script>
+    let button = document.querySelector("button")
+    button.addEventListener("mousedown", function (event) {
+      if (event.which === 1) console.log("left")
+      if (event.which === 2) console.log("middle")
+      if (event.which === 3) console.log("right")
+    })
+  </script>
+</body>
+
+</html>
