@@ -1,0 +1,59 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      margin-left: 40px;
+      margin-block-start: 40px;
+    }
+  </style>
+  <title>Practise</title>
+</head>
+
+<body>
+  <div>
+    Hello, world!<br/>
+    <button>
+      Click here
+  </button>
+  </div><br/>
+  <form id='form1'>
+    <input type='text' id='name' placeholder='name' id='form1'>
+  </form>
+  <a href="https://www.google.com/" id='link1'>Google</a>
+  <script>
+    let button = document.querySelector('button')
+    let link = document.getElementById('link1')
+    let form = document.getElementById('form1')
+
+    button.onclick = function () {
+      document.body.style.color = randomColor()
+      console.log('Color is ', document.body.style)
+    }
+
+    function randomColor() {
+      return 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(
+        Math.random() * 256)) + ')'
+    }
+
+    link.addEventListener('click', function (event) {
+      event.preventDefault()
+      console.log('Clicked')
+    })
+
+    form.addEventListener('focus', function (event) {
+      event.target.style.background = "gray "
+    }, true)
+
+    form.addEventListener('blur', function (event) {
+      event.target.style.background = "white"
+    }, true)
+
+    setTimeout(function () {
+      document.body.style.background = 'gray'
+    }, 25000)
+  </script>
+</body>
+
+</html>
