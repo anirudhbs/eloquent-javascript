@@ -1,0 +1,27 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <canvas></canvas>
+  <script>
+    var cx = document.querySelector(" canvas ").getContext("2d");
+    var img = document.createElement("img");
+    img.src = "img/player.png";
+    var spriteW = 24,
+      spriteH = 30;
+    img.addEventListener("load", function () {
+      var cycle = 0;
+      setInterval(function () {
+        cx.clearRect(0, 0, spriteW, spriteH);
+        cx.drawImage(img, cycle * spriteW, 0, spriteW, spriteH, 0, 0, spriteW, spriteH);
+        cycle = (cycle + 1) % 8;
+      }, 80);
+    });
+  </script>
+</body>
+
+</html>
