@@ -1,0 +1,42 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Promise Load Image</title>
+</head>
+
+<body>
+</body>
+
+<script>
+  function imgLoad(url) {
+    return new Promise(function (resolve, reject) {
+      let req = new XMLHttpRequest();
+      req.open('GET', url);
+      req.responseType = 'blob';
+      req.onload = function () {
+        if (req.status === 200) {
+          resolve(req.response);
+        } else {
+          reject(Error('Image didnt load successfully: ' + req.statusText));
+        }
+      };
+      req.onerror = function () {
+        reject(Error('There was a network error'));
+      };
+      req.send();
+    });
+  }
+  let body = document.querySelector('body'),
+    myImage = new Image();
+
+  imgLoad('iBuyPower.png').then(function (res) {
+    var imageURL = window.URL.createObjectURL(res);
+    myImage.src = imageURL;
+    body.appendChild(myImage);
+  }, function (err) {
+    console.log(err);
+  });
+</script>
+
+</html>

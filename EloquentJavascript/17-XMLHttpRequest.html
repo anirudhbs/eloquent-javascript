@@ -1,0 +1,21 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>practise</title>
+  <script>
+    //async request
+    let req = new XMLHttpRequest();
+    req.open('GET', 'http://eloquentjavascript.net/author', true);
+    req.addEventListener("load", function () {
+      if (req.status === 200) console.log("Done:", req.responseText);
+    });
+    req.send(null);
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

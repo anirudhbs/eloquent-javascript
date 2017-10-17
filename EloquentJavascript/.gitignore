@@ -1,0 +1,6 @@
+*.json
+node_modules/
+practise.html
+practise.js
+code/
+img/

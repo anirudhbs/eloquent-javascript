@@ -1,0 +1,19 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>17.1</title>
+</head>
+
+<body>
+  <script>
+    let req = new XMLHttpRequest();
+    req.open('GET', 'http://eloquentjavascript.net/author', false);
+    //'text/plain', 'text/html', 'application/json', 'application/rainbows+unicorns'
+    req.setRequestHeader('accept', 'application/rainbows+unicorns');
+    req.send(null);
+    console.log(req.responseText);
+  </script>
+</body>
+
+</html>
