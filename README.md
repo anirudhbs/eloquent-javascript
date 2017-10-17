@@ -1,1 +1,1 @@
-This is a repository of the exercises in the book Eloquent Javascript
+This is a repository of code written while learning JS
