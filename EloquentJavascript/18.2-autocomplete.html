@@ -1,0 +1,37 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>18.2</title>
+</head>
+
+<body>
+  <input type="text" id="field">
+  <div id="suggestions" style="cursor: pointer"></div>
+
+  <script>
+    var terms = ['abc'];
+    // for (var name in window) terms.push(name);
+    let textfield = document.querySelector('#field'),
+      suggestions = document.querySelector('#suggestions')
+
+    textfield.addEventListener('input', function () {
+      let matching = terms.filter(function (term) {
+        return term.indexOf(textfield.value) === 0
+      });
+
+      suggestions.textContent = ''
+      matching.forEach(function (term) {
+        let node = document.createElement('div')
+        node.textContent = term
+        node.addEventListener('click', function () { //whats happening here?
+          textfield.value = term
+          suggestions.textContent = ''
+        })
+        suggestions.appendChild(node)
+      })
+    })
+  </script>
+</body>
+
+</html>
